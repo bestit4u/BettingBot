@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C2B58F8D-EC58-4C42-8B00-F86E3E8E927E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Betburger</RootNamespace>
+    <AssemblyName>ArbitrageService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Betdaq_Api, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Betdaq_Api.dll</HintPath>
+    </Reference>
+    <Reference Include="Betdaq_Api.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Betdaq_Api.XmlSerializers.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net40\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1-beta3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Selenium.WebDriverBackedSelenium, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.WebDriverBackedSelenium.3.4.0\lib\net40\Selenium.WebDriverBackedSelenium.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSocket.ClientEngine, Version=0.8.0.7, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\SuperSocket.ClientEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="ThoughtWorks.Selenium.Core, Version=2.48.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ThoughtWorks.Selenium.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.WebDriver.3.4.0\lib\net40\WebDriver.dll</HintPath>
+    </Reference>
+    <Reference Include="WebDriver.Support, Version=3.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Selenium.Support.3.4.0\lib\net40\WebDriver.Support.dll</HintPath>
+    </Reference>
+    <Reference Include="websocket-sharp-customheaders">
+      <HintPath>..\packages\websocket-sharp-customheaders.1.0.2.31869\lib\net35\websocket-sharp-customheaders.dll</HintPath>
+    </Reference>
+    <Reference Include="WebSocket4Net, Version=0.15.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\WebSocket4Net.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Constant\Constants.cs" />
+    <Compile Include="Constant\JaoWinklerDistance.cs" />
+    <Compile Include="Constant\Utils.cs" />
+    <Compile Include="Controller\ArbitrageMng.cs" />
+    <Compile Include="Controller\Bet365Ctrl.cs" />
+    <Compile Include="Controller\BetdaqCtrl.cs" />
+    <Compile Include="Controller\BetfairCtrl.cs" />
+    <Compile Include="Controller\LadbrokesCtrl.cs" />
+    <Compile Include="Controller\MatchbookCtrl.cs" />
+    <Compile Include="Controller\Setting.cs" />
+    <Compile Include="Json\Betdaq\JsonEvent.cs" />
+    <Compile Include="Json\Betdaq\JsonMarket.cs" />
+    <Compile Include="Json\Betdaq\JsonPrice.cs" />
+    <Compile Include="Json\Betdaq\JsonSelection.cs" />
+    <Compile Include="Json\JsonBetHistory.cs" />
+    <Compile Include="Json\JsonBetOffer.cs" />
+    <Compile Include="Json\JsonBetOfferType.cs" />
+    <Compile Include="Json\JsonCriterion.cs" />
+    <Compile Include="Json\JsonEvent.cs" />
+    <Compile Include="Json\JsonEventGroup.cs" />
+    <Compile Include="Json\JsonEventGroupList.cs" />
+    <Compile Include="Json\JsonExchangeBet.cs" />
+    <Compile Include="Json\JsonExchangeResponseFilter.cs" />
+    <Compile Include="Json\JsonExchangeResult.cs" />
+    <Compile Include="Json\JsonGroupEvent.cs" />
+    <Compile Include="Json\JsonGroupItem.cs" />
+    <Compile Include="Json\JsonGroupList.cs" />
+    <Compile Include="Json\JsonLBMarket.cs" />
+    <Compile Include="Json\JsonLBMarketResponse.cs" />
+    <Compile Include="Json\JsonLBPrice.cs" />
+    <Compile Include="Json\JsonLBSelection.cs" />
+    <Compile Include="Json\JsonLiveEvent.cs" />
+    <Compile Include="Json\JsonLiveEvents.cs" />
+    <Compile Include="Json\JsonMarkets.cs" />
+    <Compile Include="Json\JsonName.cs" />
+    <Compile Include="Json\JsonOutcome.cs" />
+    <Compile Include="Json\JsonPair.cs" />
+    <Compile Include="Json\JsonSportsBookClass.cs" />
+    <Compile Include="Json\JsonSportsBookType.cs" />
+    <Compile Include="Json\JsonUBGroup.cs" />
+    <Compile Include="Json\JsonUBSubGroup.cs" />
+    <Compile Include="Json\JsonUBSubSubGroup.cs" />
+    <Compile Include="Json\JsonUBSubSubSubGroup.cs" />
+    <Compile Include="Json\Matchbook\JsonEvent.cs" />
+    <Compile Include="Json\Matchbook\JsonMarket.cs" />
+    <Compile Include="Json\Matchbook\JsonPrice.cs" />
+    <Compile Include="Json\Matchbook\JsonResult.cs" />
+    <Compile Include="Json\Matchbook\JsonRunner.cs" />
+    <Compile Include="License\LicenseActivateControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\LicenseActivateControl.designer.cs">
+      <DependentUpon>LicenseActivateControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\LicenseGeneratedEventArgs.cs" />
+    <Compile Include="License\LicenseInfoControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\LicenseInfoControl.designer.cs">
+      <DependentUpon>LicenseInfoControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\LicenseSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\LicenseSettingsControl.designer.cs">
+      <DependentUpon>LicenseSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="License\LicenseSettingsValidatingEventArgs.cs" />
+    <Compile Include="License\LicenseStringContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="License\LicenseStringContainer.designer.cs">
+      <DependentUpon>LicenseStringContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ArbInfo.cs" />
+    <Compile Include="Model\Bet.cs" />
+    <Compile Include="Model\PriceInfo.cs" />
+    <Compile Include="Model\RunnerInfo.cs" />
+    <Compile Include="Model\SelectionInfo.cs" />
+    <Compile Include="Model\TempMatchInfo.cs" />
+    <Compile Include="Model\MatchInfo.cs" />
+    <Compile Include="Model\MatchInfoWrapper.cs" />
+    <Compile Include="QLicense\BASE36.cs" />
+    <Compile Include="QLicense\GITLicense.cs" />
+    <Compile Include="QLicense\HardwareInfo.cs" />
+    <Compile Include="QLicense\LicenseEntity.cs" />
+    <Compile Include="QLicense\LicenseHandler.cs" />
+    <Compile Include="QLicense\LicenseStatus.cs" />
+    <Compile Include="QLicense\LicenseTypes.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmActivation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmActivation.Designer.cs">
+      <DependentUpon>frmActivation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmAuth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmAuth.Designer.cs">
+      <DependentUpon>frmAuth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmBookies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmBookies.Designer.cs">
+      <DependentUpon>frmBookies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="License\LicenseActivateControl.resx">
+      <DependentUpon>LicenseActivateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseActivateControl.zh-Hans.resx">
+      <DependentUpon>LicenseActivateControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseInfoControl.resx">
+      <DependentUpon>LicenseInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseInfoControl.zh-Hans.resx">
+      <DependentUpon>LicenseInfoControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseSettingsControl.resx">
+      <DependentUpon>LicenseSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseSettingsControl.zh-Hans.resx">
+      <DependentUpon>LicenseSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseStringContainer.resx">
+      <DependentUpon>LicenseStringContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseStringContainer.zh-Hans.resx">
+      <DependentUpon>LicenseStringContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmActivation.resx">
+      <DependentUpon>frmActivation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmAuth.resx">
+      <DependentUpon>frmAuth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmBookies.resx">
+      <DependentUpon>frmBookies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="License\LicenseVerify.cer" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Log_Title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\Ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\baseball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\basketball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\football.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\tennis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\volleyball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\bet365.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\bwin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\pinnacle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\betburger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="image\betfred.png" />
+    <None Include="image\skybet.png" />
+    <None Include="image\coral.png" />
+    <None Include="image\PaddyPower.jpg" />
+    <None Include="image\coral1.png" />
+    <Content Include="..\packages\Chromium.ChromeDriver.2.29\content\chromedriver.exe">
+      <Link>chromedriver.exe</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="image\power-button-black.png" />
+    <None Include="image\betdaq.png" />
+    <Content Include="logo.ico" />
+    <None Include="image\logo.png" />
+    <None Include="image\button.png" />
+    <None Include="image\restore.png" />
+    <None Include="image\min.png" />
+    <None Include="image\max.png" />
+    <None Include="image\bb_logo.png" />
+    <None Include="image\bet365gr.png" />
+    <None Include="image\serversetting.png" />
+    <None Include="image\Clear.png" />
+    <None Include="image\redbet.png" />
+    <None Include="image\marathonbet.jpg" />
+    <None Include="image\BetVictor.jpg" />
+    <None Include="image\Bookmaker.png" />
+    <None Include="image\sbobet.jpg" />
+    <None Include="image\dafabet.png" />
+    <None Include="image\188bet.jpg" />
+    <None Include="image\matchbook.png" />
+    <None Include="image\thegreek.png" />
+    <None Include="image\tipico.png" />
+    <None Include="image\netbet.png" />
+    <None Include="image\ladbrokes.png" />
+    <None Include="image\betrally.png" />
+    <None Include="image\betathomelogo.png" />
+    <None Include="image\key.png" />
+    <None Include="image\willhill.png" />
+    <None Include="image\tonybet.png" />
+    <None Include="image\sportsbooking.png" />
+    <None Include="image\sportsbet.png" />
+    <None Include="image\planetwin365.png" />
+    <None Include="image\interwetten.png" />
+    <None Include="image\cashpoint.png" />
+    <None Include="image\Betway.png" />
+    <None Include="image\Betsson.png" />
+    <None Include="image\betfair.png" />
+    <None Include="image\admiral.jpg" />
+    <None Include="image\10bet.png" />
+    <None Include="image\unibet.png" />
+    <None Include="image\stoiximan.png" />
+    <None Include="image\mybet.png" />
+    <None Include="image\gemebookers.png" />
+    <None Include="image\888sports.png" />
+    <None Include="image\rugby.png" />
+    <None Include="image\hockey.png" />
+    <None Include="image\americanfootball.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\betfairng-master\BetfairNG.csproj">
+      <Project>{50f55410-b461-4639-b286-0f3205413d61}</Project>
+      <Name>BetfairNG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Matchbook\Matchbook.csproj">
+      <Project>{2c954094-869a-44a9-9e5f-643d8e902c20}</Project>
+      <Name>Matchbook</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
